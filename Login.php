@@ -14,22 +14,22 @@
 @media only screen and (max-width: 1366px) {
 
 body{
-    background-image: linear-gradient(to right, rgb(0, 0, 0, 8) 30%, rgb(236, 131, 5, 0.3) 60%), url("Livres.png");
+  background-color: #363062;
     background-position: center;
     font-family: "Motiva Sans",Arial,Helvetica,sans-serif;
   }
     
     .login-card {
-width: 290px;
-padding: 90px;
+width: 240px;
+padding: 60px;
 border: 1px solid #1b2838;
-border-radius: 10px;
-background-color: #EC8305;
-box-shadow: 2px 2px 10px black;
+border-radius: 20px;
+background-color: #4D4C7D;
+box-shadow: 5px 5px 7px black;
 position: absolute;
 top: 50%;
 left: 50%;
-transform: translate(-144%, -50%);
+transform: translate(70%, -50%);
 }
 
 .card-header {
@@ -40,7 +40,7 @@ margin-bottom: 150px
 .card-header .log {
 margin: 0;
 font-size: 30px;
-color: white;
+color: #F99417;
 position: absolute;
 }
 
@@ -59,19 +59,19 @@ user-select: none;
 
 input[type="text"], input[type="password"] {
 width: 100%;
-padding: 13px 20px;
+padding: 13px;
 font-size: 16px;
 border: 1px solid #ccc;
 border-radius: 4px;
-box-sizing: border-box;
 transition: 0.5s;
 position: relative;
-top: -50px;
+top: -49px;
+left: -15px;
 }
 
 input[type="submit"] {
 width: 100%;
-background-color: #66c0f4;
+background-color: #F99417;
 color: white;
 padding: 18px 20px;
 margin: 7px 0;
@@ -84,7 +84,7 @@ top: -40px;
 
 #A{
 width: 50%;
-background-color: #66c0f4;
+background-color: #F99417;
 color: white;
 padding: 12px 7px;
 margin: 1px 0;
@@ -92,20 +92,22 @@ border: none;
 border-radius: 4px;
 cursor: pointer;
 position: relative;
+top: -15px;
+font-size: 15px;
 }
 
 .sla{
 margin: 0;
-font-size: 24px;
+font-size: 21px;
 color: white;
 position: absolute;
 top: 50%;
 left: 50%;
-transform: translate(-50%, 750%);
+transform: translate(-50%, 800%);
 }
 
 input[type="submit"]:hover {
-background-color: #85cdf8;
+background-color: #F99417;
 transition: all ease 0.2s;
 }
 
@@ -118,7 +120,7 @@ transition: all ease 0.2s;
 
 <div class="login-card">
     <div class="card-header">
-        <div class="log">Iniciar Sessão</div>
+        <div class="log"><strong>Iniciar Sessão</strong></div>
     </div>
     <form action="valores.php" method="post">
             <div class="form-group">
@@ -135,7 +137,9 @@ transition: all ease 0.2s;
             </div>
     </form>
     <p class="sla">Primeira vez aqui?</p>
-    <center><a style="position:relative;top:55px;" href="CadastroUser.php"><button id="A">Cadastrar usuario</button></a></center>
+    <center><a style="position:relative;top:55px;" href="CadastroUser.php"><button id="A">Cadastrar</button></a></center>
+
+  <img src="" alt="">
 
     <?php
 session_start();

@@ -4,7 +4,7 @@ body{
 
 .UpBar{
     position: absolute;
-    background-color: #EC8305;
+    background-color: #F99417;
     top: -5px;
     left: -10px;
     width: 86em;
@@ -16,7 +16,7 @@ body{
 
 .BottomBar{
     position: absolute;
-    background-color: #091057;
+    background-color: #363062;
     top: 75px;
     left: -10px;
     width: 86em;
