@@ -28,7 +28,7 @@ body{
     font-size: 36px;
     color: black;
     position: relative;
-    left: 1240px;
+    left: 1180px;
     top: 20px;
 }
 
@@ -36,7 +36,7 @@ body{
     font-size: 36px;
     color: black;
     position: relative;
-    left: 1050px;
+    left: 1010px;
     top: 20px;
 }
 
@@ -45,6 +45,7 @@ body{
     font-size: 30px;
     top: -27px;
     left: 40px;
+    right: 90px;
     font-family: Arial, Helvetica, 'sans-serif';
 }
 
