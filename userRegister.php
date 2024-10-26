@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="IndexStyle.css">
 
 
-        <title>Login</title>
+        <title>Cadastro</title>
 
 <style>
 
@@ -34,7 +34,7 @@ transform: translate(70%, -50%);
 
 .card-header {
 text-align: center;
-margin-bottom: 150px
+margin-bottom: 110px
 }
 
 .card-header .log {
@@ -42,12 +42,13 @@ margin: 0;
 font-size: 30px;
 color: #F99417;
 position: absolute;
+left: 110px;
 }
 
 .form-group {
 margin-bottom: 14px;
 position: relative;
-top: -30px;
+top: 20px;
 }
 
 label {
@@ -131,11 +132,6 @@ transition: all ease 0.2s;
   user-select: none;
 }
 
-.erro{
-  position: absolute;
-  top: 370px;
-}
-
 }
 
 </style>
@@ -145,25 +141,22 @@ transition: all ease 0.2s;
 
 <div class="login-card">
     <div class="card-header">
-        <div class="log"><strong>Iniciar Sessão</strong></div>
+        <div class="log"><strong>Cadastro</strong></div>
     </div>
-    <form action="Conta.php" method="post">
+    <form action="valorUserRegister.php" method="post">
             <div class="form-group">
-            <label style="position:relative;top:-55px;" for="username">Nome:</label>
-            <input  required="" name="nome" id="nome" type="text">
+            <label style="position:relative;top:-55px;" for="user">Nome:</label>
+            <input  required="" name="user" id="user" type="text">
             </div>
             <div class="form-group">
-            <label style="position:relative;top:-55px;" for="senha">Senha:</label>
-            <input required="" name="Senha" id="Senha" type="password">
+            <label style="position:relative;top:-55px;" for="PassSenha">Senha:</label>
+            <input required="" name="PassSenha" id="PassSenha" type="password">
                 <input type="checkbox" onclick="showSenha()">
             </div>
             <div class="form-group">
             <input value="Enviar" type="submit">
             </div>
     </form>
-
-    <p class="sla">Primeira vez aqui?</p>
-    <center><a style="position:relative;top:55px;" href="userRegister.php"><button id="A">Cadastrar</button></a></center>
 
   <img class="imagem" src="2-removebg-preview.png" alt="">
 
@@ -177,7 +170,7 @@ if (isset($_SESSION['login_error'])) {
 
   <script>
     function showSenha() {
-  var x = document.getElementById("Senha");
+  var x = document.getElementById("PassSenha");
   if (x.type === "password") {
     x.type = "text";
   } else {

@@ -13,15 +13,27 @@ if ($conexao -> connect_errno) {
     exit();
 }else{
 
-    $email = $conexao -> real_escape_string($_POST['email']);
-    $senha = $conexao -> real_escape_string($_POST['Password']);
+    $nome = $conexao -> real_escape_string($_POST['nome']);
+    $senha = $conexao -> real_escape_string($_POST['Senha']);
 
     $hash = hash('sha256', $senha);
 
-    $sql = "INSERT INTO `votacaodosgames`.`logins`(`usuario`, `senha`,`cargo`) VALUES ('".$email."', '".$hash."','user');";
+    $sql = "SELECT `id`,`nome`,`senha` FROM `login` WHERE `nome`='".$nome."' AND `senha`='".$hash."';";
     $dado = $conexao->query($sql);
+    
+    if ($dado->num_rows != 0) {
+        $row = $dado -> fetch_array();
+        $_SESSION['id'] = $row[0];
+        $_SESSION['nome'] = $row[1];
         
-        $conexao ->close();
-        header("location: index.php", true,301);
-        exit();
+        $conexao -> close();
+        header("location: index.php",true,301);
+        }
+        else{
+            session_start();
+            $_SESSION['login_error'] = "Login falhou! Verifique seu nome de usuário e senha.";
+            $conexao ->close();
+            header("location: Login.php", true,301);
+            exit();
     }
+}
