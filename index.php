@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="LogoTrain.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="StyleIIndex.css">
+    <link rel="stylesheet" href="StyleIndex.css">
 
 
     <title>Estação dos Livros</title>
@@ -33,7 +33,8 @@ if (empty($_SESSION['nome'])){
 
 ?>
 
-    <a class="Kart" href="Carrinho.php"><span class="bi bi-cart"></span></a>
+    <a class="Kart" href="Carrinho.php"></a>
+    <span id="bi" class="bi bi-cart"></span>
 
     <span class="QuantiCompras"><p>0</p></span>
 
@@ -41,6 +42,8 @@ if (empty($_SESSION['nome'])){
         <input name="buscar" type="text" id="buscar" autocomplete="off" placeholder="O que você está procurando?">
         <button type="submit"><i class="bi bi-search"></i></button>
     </form>
+
+    <img class="tremImg" src="Trem.png" alt="">
 
 </div>
 
