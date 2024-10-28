@@ -18,13 +18,15 @@ if ($conexao -> connect_errno) {
 
     $hash = hash('sha256', $senha);
 
-    $sql = "SELECT `id`,`nome`,`senha` FROM `login` WHERE `nome`='".$nome."' AND `senha`='".$hash."';";
+    $sql = "SELECT `id`,`nome`,`senha`,`image` FROM `login` WHERE `nome`='".$nome."' AND `senha`='".$hash."';";
     $dado = $conexao->query($sql);
     
     if ($dado->num_rows != 0) {
         $row = $dado -> fetch_array();
         $_SESSION['id'] = $row[0];
         $_SESSION['nome'] = $row[1];
+        $_SESSION['image'] = $row[3];
+
         
         $conexao -> close();
         header("location: index.php",true,301);

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="LogoTrain.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="StyleIndex.css">
+    <link rel="stylesheet" href="styleIndex.css">
 
 
     <title>Estação dos Livros</title>
@@ -25,7 +25,9 @@ if (empty($_SESSION['nome'])){
 
 } else {
     $Nome = $_SESSION['nome'];
-    echo "<a class='User' href=''><span class='bi bi-person-circle'><p>".$Nome."</p></span></a>";
+    $Image = $_SESSION['image'];
+
+    echo "<a class='User' href=''><img class='userBorder' src='$Image'><p>".$Nome."</p></a>";
 
 }
 

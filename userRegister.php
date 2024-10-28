@@ -17,7 +17,7 @@
     <div class="card-header">
         <div class="log"><strong>Cadastro</strong></div>
     </div>
-    <form action="valorUserRegister.php" method="post">
+    <form action="valorUserRegister.php" method="post" enctype="multipart/form-data">
             <div class="form-group">
 
                 <span class="userBorder"></span>
@@ -32,7 +32,8 @@
                 <input required="" name="PassSenha" id="PassSenha" type="password">
 
                 <input type="checkbox" onclick="showSenha()">
-                <input class="imgs" type="file" accept="image/png, image/jpeg" name="image" id="image"/><br>
+
+                <input class="imgs" type="file" accept="image/png, image/jpeg" name="image1" id="image1"/><br>
 
             </div>
                 <div class="form-group">
@@ -53,7 +54,7 @@
     <script>
 
         // Função para exibir a imagem selecionada no elemento img
-        document.getElementById("image").addEventListener("change", function(event) {
+        document.getElementById("image1").addEventListener("change", function(event) {
             const file = event.target.files[0];
             if (file) {
                 const reader = new FileReader();
