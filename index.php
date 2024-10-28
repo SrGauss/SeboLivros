@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="LogoTrain.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="styleIndex.css">
+    <link rel="stylesheet" href="StyleIIndex.css">
 
 
     <title>Estação dos Livros</title>
@@ -27,13 +27,15 @@ if (empty($_SESSION['nome'])){
     $Nome = $_SESSION['nome'];
     $Image = $_SESSION['image'];
 
-    echo "<a class='User' href=''><img class='userBorder' src='$Image'><p>".$Nome."</p></a>";
+    echo "<a class='User' href='Conta.php'><img class='userBorder' src='$Image'><p>".$Nome."</p></a>";
 
 }
 
 ?>
 
     <a class="Kart" href="Carrinho.php"><span class="bi bi-cart"></span></a>
+
+    <span class="QuantiCompras"><p>0</p></span>
 
     <form class="search" action="pesquisa.php" method="post">
         <input name="buscar" type="text" id="buscar" autocomplete="off" placeholder="O que você está procurando?">

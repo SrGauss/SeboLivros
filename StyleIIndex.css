@@ -28,8 +28,29 @@ body{
     font-size: 36px;
     color: black;
     position: relative;
-    left: 1180px;
+    left: 1200px;
     top: 20px;
+}
+
+.QuantiCompras{
+    border: solid 2px white;
+    border-radius: 45px;
+    background-color: white;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 10px;
+    left: 1210px;
+}
+
+.QuantiCompras p{
+    position: absolute;
+    font-size: 23px;
+    top: -20px;
+    left: 8px;
+    font-family: Arial, Helvetica, 'sans-serif';
+    text-overflow: ellipsis;
+    max-width: 150px; 
 }
 
 .User{
@@ -47,7 +68,7 @@ body{
     position: absolute;
     font-size: 30px;
     top: -27px;
-    left: 40px;
+    left: 45px;
     font-family: Arial, Helvetica, 'sans-serif';
     text-overflow: ellipsis;
     max-width: 150px; 

@@ -147,7 +147,7 @@ transition: all ease 0.2s;
     <div class="card-header">
         <div class="log"><strong>Iniciar Sessão</strong></div>
     </div>
-    <form action="Conta.php" method="post">
+    <form action="ConexaoLogin.php" method="post">
             <div class="form-group">
             <label style="position:relative;top:-55px;" for="username">Nome:</label>
             <input  required="" name="nome" id="nome" type="text">
