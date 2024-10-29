@@ -1,10 +1,10 @@
 .LeftBar{
     position: absolute;
-    background-image: linear-gradient(to right, #af660d 5%, #F99417);
+    background-color:#F99417;
     top: -7px;
     left: -8px;
     width: 21.5em;
-    height: 41.5em;
+    height: 40.5em;
     z-index: 2;
     user-select: none;
 }
