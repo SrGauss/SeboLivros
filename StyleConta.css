@@ -1,0 +1,60 @@
+.LeftBar{
+    position: absolute;
+    background-image: linear-gradient(to right, #af660d 5%, #F99417);
+    top: -7px;
+    left: -8px;
+    width: 21.5em;
+    height: 41.5em;
+    z-index: 2;
+    user-select: none;
+}
+
+.UserIMG{
+    border: solid 4px white;
+    border-radius: 95px;
+    background-color: white;
+    position: absolute;
+    width: 175px;
+    height: 175px;
+    top: 88px;
+    left: 84px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.305);
+}
+
+.UserNAME{
+    position: fixed;
+    font-size: 27px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 1px;
+    color: white;
+    top: 245px;
+    left: 85px;
+    text-overflow: ellipsis;
+    max-width: 200px; 
+    align-items: center;
+    white-space: nowrap;
+}
+
+.back{
+    border: solid 2px white;
+    border-radius: 45px;
+    background-color: white;
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    top: 75px;
+    left: 65px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.305);
+    transition: all ease 0.5s;
+}
+
+.back p{
+    position: relative;
+    font-size: 44px;
+    top: -42px;
+    left: 0px;
+}
+
+.back:hover{
+    cursor: pointer;
+}
