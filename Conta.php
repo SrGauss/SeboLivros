@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="LogoTrain.png" type="image/x-icon">
     <link rel="stylesheet" href="styleConta.css">
 
     <title>Conta</title>
@@ -33,6 +34,8 @@
 
     <a href="javascript:history.back()"><button class="back"><p>←</p></button></a>
 
+    <a href="sair.php" class="Exit"><button>Sair da conta</button></a>
+    
 </div>
 
 </body>
