@@ -33,7 +33,7 @@
 
                 <input type="checkbox" onclick="showSenha()">
 
-                <input class="imgs" type="file" accept="image/png/, image/jpeg, image/gif" name="image1" id="image1"/><br>
+                <input class="imgs" type="file" accept="image/png, image/jpeg, image/gif" name="image1" id="image1"/><br>
 
             </div>
                 <div class="form-group">

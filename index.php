@@ -16,22 +16,22 @@
 
 <div class="UpBar">
 
-<?php
+    <?php
 
-session_start();
+    session_start();
 
-if (empty($_SESSION['nome'])){
-    echo "<a class='User' href='Login.php'><span class='bi bi-person-circle'><strong><p> Bem vindo(a)</p></strong></span></a>";
+    if (empty($_SESSION['nome'])){
+        echo "<a class='User' href='Login.php'><span class='bi bi-person-circle'><strong><p> Bem vindo(a)</p></strong></span></a>";
 
-} else {
-    $Nome = $_SESSION['nome'];
-    $Image = $_SESSION['image'];
+    } else {
+        $Nome = $_SESSION['nome'];
+        $Image = $_SESSION['image'];
 
-    echo "<a class='User' href='Conta.php'><img class='userBorder' src='$Image'><p>".$Nome."</p></a>";
+        echo "<a class='User' href='Conta.php'><img class='userBorder' src='$Image'><p>".$Nome."</p></a>";
 
-}
+    }
 
-?>
+    ?>
 
     <a class="Kart" href="Carrinho.php"></a>
         <span id="bi" class="bi bi-cart"></span>
