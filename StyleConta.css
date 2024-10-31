@@ -46,6 +46,7 @@
     left: 65px;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.305);
     transition: all ease 0.5s;
+    cursor: pointer;
 }
 
 .back p{
@@ -53,10 +54,6 @@
     font-size: 44px;
     top: -42px;
     left: 0px;
-}
-
-.back:hover{
-    cursor: pointer;
 }
 
 .Exit{
