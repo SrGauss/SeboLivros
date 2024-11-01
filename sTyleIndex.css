@@ -2,6 +2,10 @@
         background-color: white;
     }
 
+    html{
+        scroll-behavior: smooth;
+    }
+
     .UpBar{
         position: absolute;
         background-color: #F99417;
@@ -30,7 +34,7 @@
         position: absolute;
         width: 40px;
         height: 40px;
-        left: 1274px;
+        left: 1254px;
         top: 23px;
         z-index: 5;
     }
@@ -39,29 +43,22 @@
         font-size: 36px;
         color: black;
         position: absolute;
-        left: 1275px;
+        left: 1255px;
         top: 21px;
     }
 
-    .QuantiCompras{
-        border: solid 2px white;
-        border-radius: 45px;
-        background-color: white;
-        position: absolute;
-        width: 30px;
-        height: 30px;
-        top: 11px;
-        left: 1285px;
-    }
-
-    .QuantiCompras p{
-        position: absolute;
-        font-size: 23px;
-        top: -20px;
-        left: 9px;
+    .QuantiCompras {
+        position: relative;
+        font-size: 24px;
+        top: -9px;
+        left: 1270px;
         font-family: Arial, Helvetica, 'sans-serif';
         text-overflow: ellipsis;
-        max-width: 150px; 
+        max-width: 150px;
+        width: 2.1%;
+        text-align: center;
+        border-radius: 24px;
+        background-color: white;
     }
 
     .User{

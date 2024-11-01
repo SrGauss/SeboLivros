@@ -106,9 +106,8 @@ body{
         transition: 0.5s;
         position: absolute;
         width: 143px;
-        top: 50%;
-        left: 50%;
-        transform: translate(10%, -335%);
+        top: 69px;
+        left: 432px;
     }
 
     select{

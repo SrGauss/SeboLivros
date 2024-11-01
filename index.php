@@ -35,7 +35,7 @@
 
     <a class="Kart" href="Carrinho.php"></a>
         <span id="bi" class="bi bi-cart"></span>
-            <span class="QuantiCompras"><p>0</p></span>
+            <p class="QuantiCompras">0</p>
 
     <span class="linha"></span>
 
@@ -79,8 +79,8 @@ if ($conexao -> connect_errno) {
     while($row = mysqli_fetch_array($dado)){
 
         echo "<div class='card'>
-        <div class='image'><img src='$row[4]'></div>
-        <span class='title'>$row[1]</span>
+        <img class='image' src='$row[4]'>
+        <span class='title'>".utf8_encode($row[1])."</span>
         <span class='price'>R$ $row[2]</span>
         </div>";
 
