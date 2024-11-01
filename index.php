@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="LogoTrain.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="sstyleIIndex.css">
+    <link rel="stylesheet" href="sTyleIndex.css">
 
 
     <title>Estação dos Livros</title>
@@ -57,6 +57,38 @@
     <a href="cadastroLivro.php" class="cBook">Cadastrar Livro</a>
 
 </div>
+
+
+<?php
+
+$hostname = "127.0.0.1";
+$user = "root";
+$password = "root";
+$database = "sebo";
+
+$conexao = new mysqli($hostname,$user,$password,$database);
+
+if ($conexao -> connect_errno) {
+    echo "Falha ao comunicar com banco de dados.". $conexao -> connect_error;
+    exit();
+}else{
+
+    $sql = "SELECT `id`,`nomeLivro`,`preco`,`genero`,`imagem` FROM `livro`;";
+    $dado = $conexao->query($sql);
+
+    while($row = mysqli_fetch_array($dado)){
+
+        echo "<div class='card'>
+        <div class='image'><img src='$row[4]'></div>
+        <span class='title'>$row[1]</span>
+        <span class='price'>R$ $row[2]</span>
+        </div>";
+
+    }
+    $conexao -> close();
+}
+
+?>
     
 </body>
 </html>

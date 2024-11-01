@@ -108,7 +108,7 @@ body{
         width: 143px;
         top: 50%;
         left: 50%;
-        transform: translate(10%, -255%);
+        transform: translate(10%, -335%);
     }
 
     select{
@@ -122,11 +122,6 @@ body{
         top: 50%;
         left: 50%;
         transform: translate(-94%, -39%);
-    }
-
-    option{
-        
-        
     }
 
     .desc{

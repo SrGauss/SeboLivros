@@ -22,6 +22,7 @@ if(empty($_POST['nomeLivro'])){
 
     $nomeLivro = $conexao->real_escape_string($_POST['nomeLivro']);
     $autor = $conexao->real_escape_string($_POST['Autor']);
+    $preco = $conexao->real_escape_string($_POST['preco']);
     $anoPublicacao = $conexao->real_escape_string($_POST['anoPubli']);
     $genero = $conexao->real_escape_string($_POST['generos']);
     $desc = $conexao->real_escape_string(nl2br($_POST["descricao"]));
@@ -70,8 +71,8 @@ if(empty($_POST['nomeLivro'])){
         }
 
         // Inserir os dados na tabela
-        $sql = "INSERT INTO `livro`(`nomeLivro`, `autor`, `anoPublicacao`, `genero`, `descricao`, `imagem`, `pdf`, `usuario`) 
-                VALUES ('".$nomeLivro."', '".$autor."', '".$anoPublicacao."', '".$genero."', '".$desc."', '".$nome_img."', '".$nome_pdf."', '".$_SESSION['id']."')";
+        $sql = "INSERT INTO `livro`(`nomeLivro`, `autor`,`preco`, `anoPublicacao`, `genero`, `descricao`, `imagem`, `pdf`, `usuario`) 
+                VALUES ('".$nomeLivro."', '".$autor."','".$preco."', '".$anoPublicacao."', '".$genero."', '".$desc."', '".$nome_img."', '".$nome_pdf."', '".$_SESSION['id']."')";
 
         if (!$conexao->query($sql)) {
             die("Erro ao inserir dados: " . $conexao->error);

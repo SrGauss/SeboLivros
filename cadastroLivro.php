@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="LogoTrain.png" type="image/x-icon">
-    <link rel="stylesheet" href="styleCadastroLivro.css">
+    <link rel="stylesheet" href="StyleCadastroLivro.css">
 
     <title>Cadastro Livro</title>
 
@@ -30,7 +30,7 @@
             <br><br>
             <input type="text" placeholder="Autor" id="Autor" name="Autor">
             <br><br>
-            <input type="number" placeholder="Ano de publicação" min="1800" max="2025" id="anoPubli" name="anoPubli">
+            <input type="number" placeholder="Ano de publicação" min="1600" max="2025" id="anoPubli" name="anoPubli">
             <br><br>
 
             <input type="number" placeholder="Preço" id="preco" name="preco">
