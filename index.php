@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="LogoTrain.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="sTyleIndex.css">
+    <link rel="stylesheet" href="STyleIndex.css">
 
 
     <title>Estação dos Livros</title>
@@ -76,15 +76,16 @@ if ($conexao -> connect_errno) {
     $sql = "SELECT `id`,`nomeLivro`,`preco`,`genero`,`imagem` FROM `livro`;";
     $dado = $conexao->query($sql);
 
+    echo "<div class='cards-container'>";
     while($row = mysqli_fetch_array($dado)){
 
         echo "<div class='card'>
-        <img class='image' src='$row[4]'>
-        <span class='title'>".utf8_encode($row[1])."</span>
-        <span class='price'>R$ $row[2]</span>
+            <img class='image' src='$row[4]'>
+            <span class='title'>".utf8_encode($row[1])."</span>
+            <span class='price'>R$ $row[2]</span>
         </div>";
-
     }
+    echo "</div>";
     $conexao -> close();
 }
 
