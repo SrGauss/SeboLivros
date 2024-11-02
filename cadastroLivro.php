@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="LogoTrain.png" type="image/x-icon">
-    <link rel="stylesheet" href="StyleCAdastroLivro.css">
+    <link rel="stylesheet" href="styleCAdastroLivro.css">
 
     <title>Cadastro Livro</title>
 
@@ -57,9 +57,7 @@
             <br>
             <label for="image" class="imgs" id="labelImage">Selecionar Imagem</label>
             <input style="display: none;" type="file" accept="image/png, image/jpeg" name="image" id="image"/>
-            <br><br>
-            <label class="PDF" for="pdf" id="labelPdf">Selecionar PDF</label>
-            <input style="display: none;" type="file" accept="application/pdf" name="pdf" id="pdf"/>
+            <br>
 
             <input value="Cadastrar" type="submit">
         </form>
@@ -100,9 +98,8 @@
 
         // Aplica a função aos inputs de imagem e PDF
         updateLabelColor('image', 'labelImage');
-        updateLabelColor('pdf', 'labelPdf');
 
-
+        
         function Confirma() {
             var txt;
             if (confirm("Confira se o nome do jogo foi digitado corretamente")) {

@@ -34,7 +34,7 @@
         position: absolute;
         width: 40px;
         height: 40px;
-        left: 1254px;
+        left: 1242px;
         top: 23px;
         z-index: 5;
     }
@@ -43,7 +43,7 @@
         font-size: 36px;
         color: black;
         position: absolute;
-        left: 1255px;
+        left: 1245px;
         top: 21px;
     }
 
@@ -51,7 +51,7 @@
         position: absolute;
         font-size: 24px;
         top: -9px;
-        left: 1270px;
+        left: 1260px;
         font-family: Arial, Helvetica, 'sans-serif';
         text-overflow: ellipsis;
         max-width: 150px;
@@ -152,17 +152,17 @@
     .cBook{
         position: absolute;
         font-family: Arial, Helvetica, 'sans-serif';
-        font-size: 19px;
-        left: 1020px;
+        font-size: 19.5px;
+        left: 1050px;
         top: 14px;
         text-decoration: none;
-        letter-spacing: 0.7px;
+        letter-spacing: 0.8px;
         color: white;
     }
 
     .cards-container {
         display: flex;
-        gap: 1em; /* espaço entre os cards */
+        gap: 2em; /* espaço entre os cards */
         flex-wrap: wrap; /* permite que os cards quebrem para a próxima linha quando não houver espaço */
         padding: 1em;
       }
@@ -170,7 +170,7 @@
     .card {
         position: relative;
         top: 190px;
-        left: 50px;
+        left: 60px;
         width: 11.875em;
         height: 16.5em;
         box-shadow: 0px 1px 13px rgba(0,0,0,0.2);
@@ -182,23 +182,6 @@
         background: #fff;
         padding: 0.5em;
         padding-bottom: 3.4em;
-    }
-
-    .card::after {
-        content: "Add to Cart";
-        padding-top: 1.25em;
-        padding-left: 1.25em;
-        position: absolute;
-        left: 0;
-        bottom: -60px;
-        background: #00AC7C;
-        color: #fff;
-        height: 2.5em;
-        width: 90%;
-        transition: all 80ms;
-        font-weight: 600;
-        text-transform: uppercase;
-        opacity: 0;
     }
 
     .card .title {
@@ -220,18 +203,12 @@
         color: #000;
     }
 
-    .card:hover::after {
-        bottom: 0;
-        opacity: 1;
+    .card:hover{
+        transform: scale(1.03);
     }
 
     .card:active {
         transform: scale(0.98);
-    }
-
-    .card:active::after {
-        content: "Added !";
-        height: 3.125em;
     }
 
     .image {
