@@ -73,7 +73,7 @@ if ($conexao -> connect_errno) {
     exit();
 }else{
 
-    $sql = "SELECT `id`,`nomeLivro`,`preco`,`genero`,`imagem` FROM `livro`;";
+    $sql = "SELECT `id`,`nomeLivro`,`preco`,`genero`,`imagem` FROM `livro` ORDER BY RAND();";
     $dado = $conexao->query($sql);
 
     echo "<div class='cards-container'>";
