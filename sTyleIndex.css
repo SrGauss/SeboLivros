@@ -75,7 +75,44 @@
     .User p{
         position: absolute;
         font-size: 24px;
-        top: -17px;
+        top: -22px;
+        left: 50px;
+        font-family: Arial, Helvetica, 'sans-serif';
+        text-overflow: ellipsis;
+        max-width: 150px; 
+        word-break: break-word;
+    }
+
+    .User2{
+        font-size: 40px;
+        color: black;
+        position: absolute;
+        left: 1000px;
+        top: 20px;
+        align-items: center;
+        white-space: wrap; 
+        text-decoration: none;
+        margin: 0px;
+    }
+
+    .User2 p{
+        position: relative;
+        font-size: clamp(16px, 2.5vw, 24px);
+        top: 9px;
+        left: 50px;
+        font-family: Arial, Helvetica, 'sans-serif';
+        max-width: 170px;
+        margin: 0px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-decoration: none;
+    }
+
+    .p2{
+        position: absolute;
+        font-size: 15px;
+        top: 18px;
         left: 50px;
         font-family: Arial, Helvetica, 'sans-serif';
         text-overflow: ellipsis;
@@ -174,7 +211,6 @@
         width: 11.875em;
         height: 16.5em;
         box-shadow: 0px 1px 13px rgba(0,0,0,0.2);
-        cursor: pointer;
         transition: all 120ms;
         display: flex;
         align-items: center;
@@ -192,6 +228,7 @@
         bottom: 1.875em;
         font-weight: 400;
         color: #000;
+        cursor: default;
     }
 
     .card .price {
@@ -201,6 +238,7 @@
         left: 0.625em;
         bottom: 0.625em;
         color: #000;
+        cursor: default;
     }
 
     .card:hover{
@@ -217,5 +255,21 @@
         height: 100%;
         display: grid;
         place-items: center;
+        pointer-events: none;
+    }
+
+    .Car{
+        position: absolute;
+        font-size: 1.25em;
+        left: 8.45em;
+        bottom: 0.15em;
+        font-weight: 400;
+        background-color: #f99317c5;
+        color: white;
+        border: none;
+        border-radius: 45px;
+        width: 33px;
+        height: 33px;
+        cursor: pointer;
     }
   

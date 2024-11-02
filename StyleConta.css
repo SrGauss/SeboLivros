@@ -23,16 +23,17 @@
 
 .UserNAME{
     position: fixed;
-    font-size: 27px;
+    font-size: clamp(16px, 2.5vw, 27px);
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     letter-spacing: 1px;
     color: white;
     top: 245px;
     left: 85px;
-    text-overflow: ellipsis;
-    max-width: 200px; 
+    max-width: 200px;
     align-items: center;
-    white-space: nowrap;
+    overflow-wrap: break-word; 
+    word-break: break-word; 
+    overflow: hidden;
 }
 
 .back{

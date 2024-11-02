@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="LogoTrain.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="StyleIndex.css">
+    <link rel="stylesheet" href="styleIndex.css">
 
 
     <title>Estação dos Livros</title>
@@ -21,13 +21,13 @@
     session_start();
 
     if (empty($_SESSION['nome'])){
-        echo "<a class='User' href='Login.php'><span class='bi bi-person-circle'><strong><p> Bem vindo(a)</p></strong></span></a>";
+        echo "<a class='User' href='Login.php'><span class='bi bi-person-circle'><strong><p class='userP1'> Bem vindo(a)</p></strong><h1 class='p2'>Entre ou cadastre-se</h1></span></a>";
 
     } else {
         $Nome = $_SESSION['nome'];
         $Image = $_SESSION['image'];
 
-        echo "<a class='User' href='Conta.php'><img class='userBorder' src='$Image'><p>".$Nome."</p></a>";
+        echo "<a class='User2' href='Conta.php'><img class='userBorder' src='$Image'><p>".$Nome."</p></a>";
 
     }
 
@@ -35,7 +35,7 @@
 
     <a class="Kart" href="Carrinho.php"></a>
         <span id="bi" class="bi bi-cart"></span>
-            <p class="QuantiCompras">0</p>
+            <p class="QuantiCompras" id="quantiCompras">0</p>
 
     <span class="linha"></span>
 
@@ -83,6 +83,11 @@ if ($conexao -> connect_errno) {
             <img class='image' src='$row[4]'>
             <span class='title'>".utf8_encode($row[1])."</span>
             <span class='price'>R$ $row[2]</span>
+
+            
+                <input type='hidden' id='CarrinhoUser' name='CarrinhoUser' value='.$row[0].'>
+                <button class='Car' type='submit' onclick='incrementCarrinho()'><span class='bi bi-cart'></span></button>
+            
         </div>";
     }
     echo "</div>";
@@ -90,6 +95,14 @@ if ($conexao -> connect_errno) {
 }
 
 ?>
+
+<script>
+        function incrementCarrinho() {
+            const quantiComprasElement = document.getElementById("quantiCompras");
+            let currentCount = parseInt(quantiComprasElement.innerText);
+            quantiComprasElement.innerText = currentCount + 1;
+        }
+</script>
     
 </body>
 </html>
