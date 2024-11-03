@@ -83,10 +83,8 @@ if ($conexao -> connect_errno) {
             <img class='image' src='$row[4]'>
             <span class='title'>".utf8_encode($row[1])."</span>
             <span class='price'>R$ $row[2]</span>
-
             
-                <input type='hidden' id='CarrinhoUser' name='CarrinhoUser' value='.$row[0].'>
-                <button class='Car' type='submit' onclick='incrementCarrinho()'><span class='bi bi-cart'></span></button>
+            <button class='Car' data-id='$row[0]'><span style='pointer-events: none;' class='bi bi-cart'></span></button>
             
         </div>";
     }
@@ -97,10 +95,25 @@ if ($conexao -> connect_errno) {
 ?>
 
 <script>
-        function incrementCarrinho() {
-            const quantiComprasElement = document.getElementById("quantiCompras");
-            let currentCount = parseInt(quantiComprasElement.innerText);
-            quantiComprasElement.innerText = currentCount + 1;
+
+        var product_id = document.getElementsByClassName("Car");
+       for(var i = 0; i<product_id.length; i++){
+           product_id[i].addEventListener("click",function(event){
+               var target = event.target;
+               var id = target.getAttribute("data-id");
+               var xml = new XMLHttpRequest();
+               xml.onreadystatechange = function(){
+                   if(this.readyState == 4 && this.status == 200){
+                       var data = JSON.parse(this.responseText);
+                       target.innerHTML = data.in_cart;
+                       document.getElementById("quantiCompras").innerHTML = data.num_cart + 1;
+                   }
+               }
+
+               xml.open("GET","connection.php?id="+id,true);
+               xml.send();
+            
+           })
         }
 </script>
     
