@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="LogoTrain.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="styleIndex.css">
+    <link rel="stylesheet" href="StyleIndex.css">
 
 
     <title>Estação dos Livros</title>
@@ -105,8 +105,8 @@ if ($conexao -> connect_errno) {
                xml.onreadystatechange = function(){
                    if(this.readyState == 4 && this.status == 200){
                        var data = JSON.parse(this.responseText);
+                       document.getElementById("quantiCompras").innerHTML = data.num_cart ++;
                        alert(data.in_cart);
-                       document.getElementById("quantiCompras").innerHTML = data.num_cart + 1;
                    }
                }
 

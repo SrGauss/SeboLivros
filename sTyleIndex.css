@@ -229,6 +229,11 @@
         font-weight: 400;
         color: #000;
         cursor: default;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 170px;
+        margin: 0px;
     }
 
     .card .price {

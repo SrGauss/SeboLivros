@@ -1,7 +1,4 @@
 <?php
-
-//conexao banco de dandos
-if (isset($_GET["id"])) {
         
     $hostname = "127.0.0.1";
     $user = "root";
@@ -10,13 +7,9 @@ if (isset($_GET["id"])) {
 
     $conexao = new mysqli($hostname,$user,$senha,$bd);
 
-    if ($conexao -> connect_errno) {
-     echo "erro" . $conexao -> connect_error;
-    }
-    else{
-        $product_id = $_GET["id"];
+    if (isset($_GET["id"])) {
 
-    if ($product_id != "") {
+    $product_id = $_GET["id"];
     $sql = "SELECT * FROM `carrinho` WHERE `product_id` = '".$product_id."';";
     $result = $conexao -> query($sql);
     $total_cart = "SELECT * FROM `carrinho`;";
@@ -34,10 +27,15 @@ if (isset($_GET["id"])) {
                     echo json_encode(["num_cart"=>$cart_num,"in_cart"=>$in_cart]);
                 }
             }
+        }
 
+    if(isset($_GET["cart_id"])){
+        $product_id = $_GET["cart_id"];
+        $sql = "DELETE FROM carrinho WHERE product_id=".$product_id;
+    
+        if($conexao->query($sql) === TRUE){
+            echo "Removido do carrinho";
+        }
     }
-    $conexao ->close();
-}
-}
 
 ?>

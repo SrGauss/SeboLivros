@@ -1,3 +1,12 @@
+<?php
+
+require_once 'connection.php';
+
+$sql_cart = "SELECT * FROM `carrinho`;";
+$all_cart = $conexao->query($sql_cart);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,26 +22,56 @@
 <body>
     
 
+
 <main>
-    <h1>0 Itens</h1>
+    <h1><?php echo mysqli_num_rows($all_cart); ?> </h1>
     <hr>
-    <div class="card">
-        <div class="images">
-            <img src="ImgIlustrativa.jpg" alt="">
-        </div>
+    <?php
+    while($row_cart = mysqli_fetch_assoc($all_cart)){
+        $sql = "SELECT * FROM `livro` WHERE `id`='".$row_cart['product_id']."';";
+        $all_product = $conexao->query($sql);
+        while($row = mysqli_fetch_assoc($all_product)){
+    ?>
+            <div class='card'>
+                <div class='images'>
+                    <img src='<?php echo $row["imagem"]; ?>' alt=''>
+                </div>
 
-        <div class="caption">
-            <p class="rate">
+                <div class='caption'>
+                    <p class='rate'>
 
-            </p>
-            <p class="product_name">Nome Produto</p>
-            <p class="preco"><b>R$41</b></p>
-            <p class="disconto"><b><del>R$64</del></b></p>
-            <button class="remove">Tirar do carrinho</button>
-        </div>
-    </div>
+                    </p>
+                    <p class='product_name'><?php echo utf8_encode($row["nomeLivro"]); ?></p>
+                    <p class='preco'><b><?php echo $row["preco"]; ?></b></p>
+                    <p class='disconto'><b><del>R$64</del></b></p>
+                    <button class='remove' data-id="<?php echo $row["id"]; ?>">Tirar do carrinho</button>
+                </div>
+            </div>
+    <?php
+        }
+    }
+    ?>
 </main>
 
+<script>
+        var remove = document.getElementsByClassName("remove");
+        for(var i = 0; i<remove.length; i++){
+            remove[i].addEventListener("click",function(event){
+                var target = event.target;
+                var cart_id = target.getAttribute("data-id");
+                var xml = new XMLHttpRequest();
+                xml.onreadystatechange = function(){
+                    if(this.readyState == 4 && this.status == 200){
+                       target.innerHTML = this.responseText;
+                       target.style.opacity = .3;
+                    }
+                }
+
+                xml.open("GET","connection.php?cart_id="+cart_id,true);
+                xml.send();
+            })
+        }
+</script>
 
 </body>
 </html>

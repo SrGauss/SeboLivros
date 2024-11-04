@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: 04-Nov-2024 às 01:23
+-- Generation Time: 04-Nov-2024 às 14:52
 -- Versão do servidor: 5.7.11
 -- PHP Version: 7.0.3
 
@@ -30,7 +30,8 @@ USE `sebo`;
 
 DROP TABLE IF EXISTS `carrinho`;
 CREATE TABLE IF NOT EXISTS `carrinho` (
-  `product_id` int(11) DEFAULT NULL
+  `product_id` int(11) DEFAULT NULL,
+  UNIQUE KEY `product_id` (`product_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -38,17 +39,10 @@ CREATE TABLE IF NOT EXISTS `carrinho` (
 --
 
 INSERT INTO `carrinho` (`product_id`) VALUES
-(11),
-(7),
-(11),
-(8),
-(10),
 (6),
-(8),
 (7),
 (10),
-(12),
-(9);
+(11);
 
 -- --------------------------------------------------------
 
@@ -68,7 +62,7 @@ CREATE TABLE IF NOT EXISTS `livro` (
   `imagem` varchar(450) NOT NULL,
   `usuario` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `livro`
@@ -81,7 +75,11 @@ INSERT INTO `livro` (`id`, `nomeLivro`, `autor`, `preco`, `anoPublicacao`, `gene
 (9, 'A Sociedade do Anel', 'J. R. R. Tolkien', '70', '1954', 'Fantasia', 'A Sociedade do Anel começa no Condado, a região rural do oeste da Terra-média onde vivem os diminutos e pacatos hobbits. Bilbo Bolseiro, um dos raros aventureiros desse povo, cujas peripécias foram contadas em O Hobbit, resolve ir embora do Condado e deixa sua considerável herança nas mãos de seu jovem parente Frodo.', 'bookImages/aSociedadeDoAnel.jpg', '2'),
 (10, 'A Arte da Guerra', 'Sun\'Tzu', '60', '2015', 'Histórico', 'O que faz de um tratado militar, escrito por volta de 500 a.C., manter-se atual a ponto de ser publicado praticamente no mundo todo até os dias de hoje? Você verá que, em A arte da guerra, as estratégias transmitidas pelo general chinês Sun Tzu carregam um profundo conhecimento da natureza humana. Elas transcendem os limites dos campos de batalha e alcançam o contexto das pequenas ou grandes lutas cotidianas, sejam em ambientes competitivos ? como os do mundo corporativo ? sejam nos desafios internos, em que temos de encarar nossas próprias dificuldades. Se você não conhece a si mesmo nem o inimigo, sucumbirá a todas as batalhas. Sun Tzu', 'bookImages/aArteGuerra.jpg', '2'),
 (11, 'Jurassic Park', 'Michael Crichton', '130', '1990', 'Ficção', 'Jurassic Park é um livro de ficção científica escrito por Michael Crichton e publicado em 20 de novembro de 1990. A trama usa a teoria do caos e suas implicações filosóficas para explicar o colapso de um parque de diversões povoado por dinossauros, recriados através de engenharia genética.', 'bookImages/Jurassic.jpg', '2'),
-(12, 'As Crônicas de Nárnia', 'C. S. Lewis', '50', '2009', 'Fantasia', 'Viagens ao fim do mundo, criaturas fantásticas e batalhas épicas entre o bem e o mal - o que mais um leitor poderia querer de um livro? O livro que tem tudo isso é \'\'\'\'O leão, a feiticeira e o guarda-roupa\'\'\'\', escrito em 1949 por Clive Staples Lewis. MasLewis não parou por aí. Seis outros livros vieram depois e, juntos, ficaram conhecidos como \'\'\'\'As crônicas de Nárnia\'\'\'\'. Nos últimos cinqüenta anos, \'\'\'\'As crônicas de Nárnia\'\'\'\' transcenderam o gênero da fantasia para se tornar parte do cânone da literaturaclássica. Cada um dos sete livros é uma obra-prima, atraindo o leitor para um mundo em que a magia encontra a realidade, e o resultado é um mundo ficcional que tem fascinado gerações. Esta edição apresenta todas as sete crônicas integralmente, num único volume. Os livros são apresentados de acordo com a ordem de preferência de Lewis, cada capítulo com uma ilustração do artista original, Pauline Baynes. Enganosamente simples e direta, \'\'\'\'As crônicas de Nárnia\'\'\'\' continuam cativando os leitores com aventuras, personagens e fatos que falam a pessoas de todas as idades.', 'bookImages/leao.jpg', '7');
+(12, 'As Crônicas de Nárnia', 'C. S. Lewis', '50', '2009', 'Fantasia', 'Viagens ao fim do mundo, criaturas fantásticas e batalhas épicas entre o bem e o mal - o que mais um leitor poderia querer de um livro? O livro que tem tudo isso é \'\'\'\'O leão, a feiticeira e o guarda-roupa\'\'\'\', escrito em 1949 por Clive Staples Lewis. MasLewis não parou por aí. Seis outros livros vieram depois e, juntos, ficaram conhecidos como \'\'\'\'As crônicas de Nárnia\'\'\'\'. Nos últimos cinqüenta anos, \'\'\'\'As crônicas de Nárnia\'\'\'\' transcenderam o gênero da fantasia para se tornar parte do cânone da literaturaclássica. Cada um dos sete livros é uma obra-prima, atraindo o leitor para um mundo em que a magia encontra a realidade, e o resultado é um mundo ficcional que tem fascinado gerações. Esta edição apresenta todas as sete crônicas integralmente, num único volume. Os livros são apresentados de acordo com a ordem de preferência de Lewis, cada capítulo com uma ilustração do artista original, Pauline Baynes. Enganosamente simples e direta, \'\'\'\'As crônicas de Nárnia\'\'\'\' continuam cativando os leitores com aventuras, personagens e fatos que falam a pessoas de todas as idades.', 'bookImages/leao.jpg', '7'),
+(13, 'Perdido em Marte', 'Andy Weir', '62', '2015', 'Ficção Científica', 'Há seis dias, o astronauta Mark Watney se tornou a décima sétima pessoa a pisar em Marte. E, provavelmente, será a primeira a morrer no planeta vermelho. Depois de uma forte tempestade de areia, a missão Ares 3 é abortada e a tripulação vai embora, certa de que Mark morreu em um terrível acidente. Ao despertar, ele se vê completamente sozinho, ferido e sem ter como avisar às pessoas na Terra que está vivo.', 'bookImages/Perdido.jpg', '7'),
+(14, 'Harry Potter e a Pedra Filosofal', 'J.K. Rowling', '40', '2017', 'Fantasia', 'Harry Potter e a Pedra Filosofal é o primeiro dos sete livros da série de fantasia Harry Potter, escrita por J. K. Rowling. O livro conta a história de Harry Potter, um órfão criado pelos tios que descobre, em seu décimo primeiro aniversário, que é um bruxo.', 'bookImages/Potter.jpg', '7'),
+(15, 'Jogos Vorazes', 'Suzanne Collins', '35', '2012', 'Ficção Científica', 'Na abertura dos Jogos Vorazes, a organização não recolhe os corpos dos combatentes caídos e dá tiros de canhão até o final. Cada tiro, um morto. Onze tiros no primeiro dia. Treze jovens restaram, entre eles, Katniss. Para quem os tiros de canhão serão no dia seguinte?... Após o fim da América do Norte, uma nova nação chamada Panem surge. Formada por doze distritos, é comandada com mão de ferro pela Capital. Uma das formas com que demonstra seu poder sobre o resto do carente país é com Jogos Vorazes, uma competição anual transmitida ao vivo pela televisão, em que um garoto e uma garota de doze a dezoito anos de cada distrito são selecionados e obrigados a lutar até a morte!', 'bookImages/HungerGames.png', '7'),
+(16, 'O Ladrão de Raios - Percy Jackson e os Olimpianos', 'Rick Riordan', '30', '2014', '', 'O Ladrão de Raios é o primeiro livro da série Percy Jackson & os Olimpianos baseado na mitologia grega, escrito por Rick Riordan, que narra a vida do adolescente Percy Jackson que descobre ser um semideus, filho de Poseidon com uma humana.', 'bookImages/Jackson.jpg', '7');
 
 -- --------------------------------------------------------
 
@@ -107,7 +105,7 @@ CREATE TABLE IF NOT EXISTS `login` (
 INSERT INTO `login` (`id`, `nome`, `senha`, `image`, `favorite`, `carrinho`) VALUES
 (2, 'Gauss', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 'uploadImages/Knuckles.png', '', ''),
 (3, 'Sam', '9baf3a40312f39849f46dad1040f2f039f1cffa1238c41e9db675315cfad39b6', 'uploadImages/sam-and-max-sam-&-max.gif', '', ''),
-(7, 'MrHouseFalloutNewVegas', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', 'Mr House Sphere.jpeg', '', '');
+(7, 'MrHouseFalloutNewVegas', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', 'uploadImages/MrHouseSphere.jpeg', '', '');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

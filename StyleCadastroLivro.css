@@ -9,9 +9,8 @@ body{
     .imgs{
         font-size: 15px;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
-        top: 50%;
-        left: 50%;
-        transform: translate(19.5%, -151.5%);
+        top: 248px;
+        left: 302px;
         position: absolute;
         background-color: white;
         border-radius: 15px;
@@ -91,7 +90,7 @@ body{
         position: absolute;
         width: 125px;
         top: 185px;
-        left: 298px;
+        left: 305px;
     }
 
     select{
