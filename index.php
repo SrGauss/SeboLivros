@@ -105,7 +105,7 @@ if ($conexao -> connect_errno) {
                xml.onreadystatechange = function(){
                    if(this.readyState == 4 && this.status == 200){
                        var data = JSON.parse(this.responseText);
-                       target.innerHTML = data.in_cart;
+                       alert(data.in_cart);
                        document.getElementById("quantiCompras").innerHTML = data.num_cart + 1;
                    }
                }
