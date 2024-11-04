@@ -33,9 +33,18 @@
 
     ?>
 
+    <?php
+
+        require_once 'connection.php';
+
+        $sql_cart = "SELECT * FROM `carrinho`;";
+        $all_cart = $conexao->query($sql_cart);
+
+    ?>
+
     <a class="Kart" href="Carrinho.php"></a>
         <span id="bi" class="bi bi-cart"></span>
-            <p class="QuantiCompras" id="quantiCompras">0</p>
+            <p class="QuantiCompras" id="quantiCompras"><?php echo mysqli_num_rows($all_cart); ?></p>
 
     <span class="linha"></span>
 
@@ -105,8 +114,9 @@ if ($conexao -> connect_errno) {
                xml.onreadystatechange = function(){
                    if(this.readyState == 4 && this.status == 200){
                        var data = JSON.parse(this.responseText);
-                       document.getElementById("quantiCompras").innerHTML = data.num_cart ++;
                        alert(data.in_cart);
+                       document.getElementById("quantiCompras").innerHTML = data.num_cart ++;
+
                    }
                }
 
@@ -115,6 +125,7 @@ if ($conexao -> connect_errno) {
             
            })
         }
+        
 </script>
     
 </body>

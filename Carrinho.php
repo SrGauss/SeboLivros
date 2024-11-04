@@ -14,7 +14,7 @@ $all_cart = $conexao->query($sql_cart);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="LogoTrain.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="Kart.css">
+    <link rel="stylesheet" href="KKart.css">
 
 
     <title>Carrinho</title>
@@ -24,7 +24,7 @@ $all_cart = $conexao->query($sql_cart);
 
 
 <main>
-    <h1><?php echo mysqli_num_rows($all_cart); ?> </h1>
+    <h1>Itens no carrinho: <?php echo mysqli_num_rows($all_cart); ?></h1>
     <hr>
     <?php
     while($row_cart = mysqli_fetch_assoc($all_cart)){
@@ -40,7 +40,7 @@ $all_cart = $conexao->query($sql_cart);
                 <div class='caption'>
                     <p class='rate'>
 
-                    </p>
+                    </p><br style="user-select: none;">
                     <p class='product_name'><?php echo utf8_encode($row["nomeLivro"]); ?></p>
                     <p class='preco'><b><?php echo $row["preco"]; ?></b></p>
                     <p class='disconto'><b><del>R$64</del></b></p>
