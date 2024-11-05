@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="LogoTrain.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="StyleIndex.css">
+    <link rel="stylesheet" href="StyleIIndex.css">
 
 
     <title>Estação dos Livros</title>
@@ -67,6 +67,27 @@
 
 </div>
 
+    <select name="FiltroGenero" id="FiltroGenero">
+            <option value="" disabled selected hidden>Gêneros</option>
+            <option value="Ficção">Ficção</option>
+            <option value="Fantasia">Fantasia</option>
+            <option value="Horror">Horror</option>
+            <option value="Suspense">Suspense</option>
+            <option value="Romance">Romadnce</option>
+            <option value="Conto">Conto</option>
+            <option value="Ficção Científica">Ficção Científica</option>
+            <option value="Aventura">Aventura</option>
+            <option value="Biografia">Biografia</option>
+            <option value="Científico">Científico</option>
+            <option value="Guias & Como fazer">Guias & Como fazer</option>
+            <option value="Histórico">Histórico</option>
+            <option value="Infantil">Infantil</option>
+            <option value="Young adult">Young adult</option>
+            <option value="Distopia">Distopia</option>
+            <option value="Poesia">Poesia</option>
+            <option value="Drama">Drama</option>
+            <option value="Autoajuda">Autoajuda</option>
+    </select>
 
 <?php
 
