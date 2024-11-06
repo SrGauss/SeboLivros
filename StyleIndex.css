@@ -290,4 +290,12 @@
         left: 50%;
         transform: translate(-300%, -370%);
     }
+
+#rede{
+    position: absolute;
+    z-index: 5;
+    font-size: 25px;
+    top: 146px;
+    left: 90px;
+}
   

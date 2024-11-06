@@ -41,7 +41,7 @@
                 <option value="Fantasia">Fantasia</option>
                 <option value="Horror">Horror</option>
                 <option value="Suspense">Suspense</option>
-                <option value="Romance">Romadnce</option>
+                <option value="Romance">Romance</option>
                 <option value="Conto">Conto</option>
                 <option value="Ficção Científica">Ficção Científica</option>
                 <option value="Aventura">Aventura</option>

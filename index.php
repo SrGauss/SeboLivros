@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="LogoTrain.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="StyleIIndex.css">
+    <link rel="stylesheet" href="StyleIndex.css">
 
 
     <title>Estação dos Livros</title>
@@ -67,13 +67,15 @@
 
 </div>
 
+    <i id="rede" class="bi bi-filter"></i>
+
     <select name="FiltroGenero" id="FiltroGenero">
-            <option value="" disabled selected hidden>Gêneros</option>
+            <option value="" disabled selected hidden>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Filtrar</option>
             <option value="Ficção">Ficção</option>
             <option value="Fantasia">Fantasia</option>
             <option value="Horror">Horror</option>
             <option value="Suspense">Suspense</option>
-            <option value="Romance">Romadnce</option>
+            <option value="Romance">Romance</option>
             <option value="Conto">Conto</option>
             <option value="Ficção Científica">Ficção Científica</option>
             <option value="Aventura">Aventura</option>
@@ -89,39 +91,28 @@
             <option value="Autoajuda">Autoajuda</option>
     </select>
 
+    <div id="cardsContainer">
+    <!-- Os cartões serão atualizados aqui -->
+</div>
+
+<script>
+    document.getElementById("FiltroGenero").addEventListener("change", function() {
+        var genero = this.value;
+        var xhr = new XMLHttpRequest();
+        
+        xhr.onreadystatechange = function() {
+            if (this.readyState === 4 && this.status === 200) {
+                document.getElementById("cardsContainer").innerHTML = this.responseText;
+            }
+        };
+
+        xhr.open("GET", "filtrar.php?genero=" + encodeURIComponent(genero), true);
+        xhr.send();
+    });
+</script>
+
 <?php
-
-$hostname = "127.0.0.1";
-$user = "root";
-$password = "root";
-$database = "sebo";
-
-$conexao = new mysqli($hostname,$user,$password,$database);
-
-if ($conexao -> connect_errno) {
-    echo "Falha ao comunicar com banco de dados.". $conexao -> connect_error;
-    exit();
-}else{
-
-    $sql = "SELECT `id`,`nomeLivro`,`preco`,`genero`,`imagem` FROM `livro` ORDER BY RAND();";
-    $dado = $conexao->query($sql);
-
-    echo "<div class='cards-container'>";
-    while($row = mysqli_fetch_array($dado)){
-
-        echo "<div class='card'>
-            <img class='image' src='$row[4]'>
-            <span class='title'>".utf8_encode($row[1])."</span>
-            <span class='price'>R$ $row[2]</span>
-            
-            <button class='Car' data-id='$row[0]'><span style='pointer-events: none;' class='bi bi-cart'></span></button>
-            
-        </div>";
-    }
-    echo "</div>";
-    $conexao -> close();
-}
-
+include "filtrar.php";
 ?>
 
 <script>
