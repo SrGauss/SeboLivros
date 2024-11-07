@@ -31,6 +31,7 @@ while ($row = mysqli_fetch_array($dado)) {
 }
 $output .= "</div>";
 
+
 echo $output;
 
 $conexao->close();

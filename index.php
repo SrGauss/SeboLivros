@@ -69,7 +69,7 @@
 
     <i id="rede" class="bi bi-filter"></i>
 
-    <select name="FiltroGenero" id="FiltroGenero">
+    <select name="FiltroGenero" id="FiltroGenero" onchange="toggleRedeVisibility()">
             <option value="" disabled selected hidden>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Filtrar</option>
             <option value="Ficção">Ficção</option>
             <option value="Fantasia">Fantasia</option>
@@ -96,6 +96,19 @@
 </div>
 
 <script>
+    function toggleRedeVisibility() {
+        const rede = document.getElementById("rede");
+        const select = document.getElementById("FiltroGenero");
+
+        if (select.value) {
+            // Torna o elemento invisível
+            rede.style.display = "none";
+        } else {
+            // Torna o elemento visível novamente se nenhuma opção estiver selecionada
+            rede.style.display = "inline";
+        }
+    }      
+
     document.getElementById("FiltroGenero").addEventListener("change", function() {
         var genero = this.value;
         var xhr = new XMLHttpRequest();

@@ -286,16 +286,15 @@
         transition: 0.5s;
         position: absolute;
         width: 200px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-300%, -370%);
+        top: 140px;
+        left: 80px;
     }
 
-#rede{
-    position: absolute;
-    z-index: 5;
-    font-size: 25px;
-    top: 146px;
-    left: 90px;
-}
+    #rede{
+        position: absolute;
+        z-index: 5;
+        font-size: 25px;
+        top: 153px;
+        left: 90px;
+    }
   
