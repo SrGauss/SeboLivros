@@ -161,7 +161,7 @@
     <p class="sla">Primeira vez aqui?</p>
     <center><a style="position:relative;top:55px;" href="userRegister.php"><button id="A">Cadastrar</button></a></center>
 
-  <img class="imagem" src="2-removebg-preview.png" alt="">
+  <img class="imagem" src="./imagensDoSite/2-removebg-preview.png" alt="">
 
     <?php
 session_start();

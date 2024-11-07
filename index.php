@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="LogoTrain.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./imagensDoSite/LogoTrain.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="StyleIndex.css">
 
@@ -53,7 +53,7 @@
         <button type="submit"><i class="bi bi-search"></i></button>
     </form>
 
-    <img class="tremImg" src="Trem.png" alt="">
+    <img class="tremImg" src="./imagensDoSite/Trem.png" alt="">
 
 </div>
 

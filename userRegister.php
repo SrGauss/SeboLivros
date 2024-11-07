@@ -41,7 +41,7 @@
             </div>
     </form>
 
-  <img class="imagem" src="2-removebg-preview.png" alt="">
+  <img class="imagem" src="./imagensDoSite/2-removebg-preview.png" alt="">
 
     <?php
         session_start();
