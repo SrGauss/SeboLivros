@@ -54,8 +54,9 @@
                             <button class='leia-mais-btn'>Leia mais</button>
                         </div>
 
-                            <span class='price'>R$ {$row['preco']}</span>
-                            <input type='hidden' id='View' name='View' value='{$row[1]}'>
+                        <div class='preco'>
+                            <p class='price'>{$row['preco']}</p>
+                        </div>
                         
                     </div>
                 </form>";

@@ -3,10 +3,6 @@ body{
     margin: 0;
 }
 
-html{
-    scroll-behavior: smooth;
-}
-
 .UpBar{
     position: absolute;
     background-color: #F99417;
@@ -277,4 +273,31 @@ input[type="text"]{
 
 .leia-mais-btn:hover {
     background-color: #0056b3;
+}
+
+.preco{
+    position: absolute;
+    top: 181px;
+    left: 970px;
+    border: solid 5px rgba(128, 128, 128, 0.441);
+    border-radius: 4px;
+    width: 350px;
+    height: 450px;
+}
+
+.price{
+    position: absolute;
+    font-size: clamp(16px, 2.5vw, 29px);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgba(0, 0, 0, 0.864);
+    top: 0px;
+    left: 120px;
+    max-width: 600px;
+    overflow-wrap: break-word; 
+    word-break: break-word; 
+    overflow: hidden;
+}
+
+.price::before{
+    content: "R$ ";
 }
