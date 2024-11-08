@@ -20,19 +20,36 @@ if (isset($_GET['genero']) && !empty($_GET['genero'])) {
 
 $dado = $conexao->query($sql);
 
-$output = "<div class='cards-container'>";
+echo "<div class='cards-container'>";
+
 while ($row = mysqli_fetch_array($dado)) {
-    $output .= "<div class='card'>
-        <img class='image' src='{$row['imagem']}'>
-        <span class='title'>" . utf8_encode($row['nomeLivro']) . "</span>
-        <span class='price'>R$ {$row['preco']}</span>
-        <button class='Car' data-id='{$row['id']}'><span style='pointer-events: none;' class='bi bi-cart'></span></button>
-    </div>";
+
+    echo "
+    <form method='POST' action='Book.php' id='autoSubmitForm{$row['id']}'>
+        <div class='card' onclick='document.getElementById(\"autoSubmitForm{$row['id']}\").submit();'>
+            <img class='image' src='{$row['imagem']}'>
+            <span class='title'>".utf8_encode($row['nomeLivro'])."</span>
+            <span class='price'>R$ {$row['preco']}</span>
+            <input type='hidden' id='View' name='View' value='{$row[0]}'>
+            
+            <button type='button' class='Car' data-id='{$row['id']}' onclick='handleButtonClick(event, {$row['id']})'>
+                <span style='pointer-events: none;' class='bi bi-cart'></span>
+            </button>
+        </div>
+    </form>";
 }
-$output .= "</div>";
 
+echo "</div>";
 
-echo $output;
+echo "
+<script>
+    function handleButtonClick(event, id) {
+        // Impede que o clique no botão acione o onclick da div
+        event.stopPropagation();
+        console.log('Botão clicado para o item ID:', id);
+        // Lógica adicional para o botão
+    }
+</script>";
 
 $conexao->close();
 ?>
