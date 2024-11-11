@@ -26,6 +26,7 @@ if(empty($_POST['nomeLivro'])){
             $anoPublicacao = utf8_decode($conexao->real_escape_string($_POST['anoPubli']));
             $genero = utf8_decode($conexao->real_escape_string($_POST['generos']));
             $desc = utf8_decode($conexao->real_escape_string(nl2br($_POST["descricao"])));
+            $estoque = utf8_decode($conexao->real_escape_string($_POST['estoque']));
         
             // Diretório para salvar as imagens
             $diretorio_imagem = "bookImages/";
@@ -48,8 +49,8 @@ if(empty($_POST['nomeLivro'])){
     
 
             // Inserir os dados na tabela
-            $sql = "INSERT INTO `livro`(`nomeLivro`, `autor`,`preco`, `anoPublicacao`, `genero`, `descricao`, `imagem`, `usuario`) 
-                    VALUES ('".$nomeLivro."', '".$autor."','".$preco."', '".$anoPublicacao."', '".$genero."', '".$desc."', '".$nome_img."', '".$_SESSION['id']."')";
+            $sql = "INSERT INTO `livro`(`nomeLivro`, `autor`,`preco`, `anoPublicacao`, `genero`, `descricao`, `imagem`, `estoque`, `usuario`) 
+                    VALUES ('".$nomeLivro."', '".$autor."','".$preco."', '".$anoPublicacao."', '".$genero."', '".$desc."', '".$nome_img."', '".$estoque."', '".$_SESSION['id']."')";
 
             if (!$conexao->query($sql)) {
                 die("Erro ao inserir dados: " . $conexao->error);

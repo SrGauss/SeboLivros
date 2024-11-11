@@ -5,9 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./imagensDoSite/LogoTrain.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="BookStyle.css">
+    <link rel="stylesheet" href="BBBookStyle.css">
 
     <title>Livro</title>
+
+    <style>
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button 
+  {
+    opacity: 1;
+  }
+
+  input[type=number]::-webkit-outer-spin-button, 
+  input[type=number]::-webkit-inner-spin-button 
+  {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+  }
+</style>
+
 </head>
 <body>
     
@@ -34,7 +52,7 @@
 
             $ValuePost = $_POST['View'];
 
-            $sql= "SELECT `id`, `nomeLivro`, `autor`, `preco`, `anoPublicacao`, `genero`, `descricao`, `imagem` FROM `livro` WHERE `id`='".$ValuePost."';"; 
+            $sql= "SELECT `id`, `nomeLivro`, `autor`, `preco`, `desconto`, `anoPublicacao`, `genero`, `descricao`, `imagem`, `estoque` FROM `livro` WHERE `id`='".$ValuePost."';"; 
             $result = $conexao -> query($sql);
         
             while ($row = mysqli_fetch_array($result)) {
@@ -50,7 +68,7 @@
                         </div>
 
                         <div class='descri-container'>
-                            <p class='descri'>".utf8_encode($row['descricao'])."</p>
+                            <p class='descri'>&emsp;".utf8_encode($row['descricao'])."</p>
                             <button class='leia-mais-btn'>Leia mais</button>
                         </div>
 
@@ -60,6 +78,14 @@
                         
                     </div>
                 </form>";
+
+                if ($row['estoque'] == "0"){
+                    echo "<p class='OutEstoque'>Não disponivel</p>";
+                }
+                else if ($row['estoque'] != "0"){
+                    echo "<p class='InEstoque'>Em estoque</p>";
+                    echo "<input type='number' max='".$row['estoque']."' min='1' value='1' placeholder='Estoque' id='quantiEstoque' name='quantiEstoque'>";
+                }
             }
 
             echo "</div>";

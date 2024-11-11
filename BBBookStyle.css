@@ -301,3 +301,36 @@ input[type="text"]{
 .price::before{
     content: "R$ ";
 }
+
+.OutEstoque{
+    color: rgb(181, 42, 42);
+    z-index: 5;
+    position: absolute;
+    font-size: clamp(16px, 2.5vw, 26px);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    top: 250px;
+    left: 1050px;
+}
+
+.InEstoque{
+    color: rgb(93, 181, 42);
+    z-index: 5;
+    position: absolute;
+    font-size: clamp(16px, 2.5vw, 26px);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    top: 250px;
+    left: 1070px;
+}
+
+#quantiEstoque{
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    transition: 0.5s;
+    position: absolute;
+    width: 140px;
+    top: 320px;
+    left: 1060px;
+}
+

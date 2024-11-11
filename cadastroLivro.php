@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="LogoTrain.png" type="image/x-icon">
-    <link rel="stylesheet" href="styleCadastroLivro.css">
+    <link rel="stylesheet" href="styleCadastroLLivro.css">
 
     <title>Cadastro Livro</title>
 
@@ -63,6 +63,7 @@
             <label for="image" class="imgs" id="labelImage">Selecionar Imagem</label>
             <input style="display: none;" type="file" accept="image/png, image/jpeg" name="image" id="image"/>
             <br>
+            <input type="number" placeholder="Estoque" id="estoque" name="estoque">
 
             <input value="Cadastrar" type="submit">
         </form>
