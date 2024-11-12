@@ -194,13 +194,21 @@ input[type="text"]{
     color: white;
 }
 
+#imgContainer{
+
+}
+
 .image{
     position: relative;
+    transform-origin: center;
+    object-fit: cover;
     height: 400px;
     width: auto;
-    top: 70px;
+    top: 180px;
     left: 30px;
     border: solid 1px rgba(0, 0, 0, 0.424);
+    overflow: hidden;
+    z-index: 5;
 }
 
 .title{
@@ -209,7 +217,7 @@ input[type="text"]{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     letter-spacing: 1px;
     color: black;
-    top: -363px;
+    top: -255px;
     left: 345px;
     max-width: 600px;
     overflow-wrap: break-word; 
@@ -232,7 +240,7 @@ input[type="text"]{
     overflow-wrap: break-word;
     word-break: break-word;
     position: relative;
-    top: -378px;
+    top: -270px;
     left: 345px;
 }
 
@@ -277,7 +285,7 @@ input[type="text"]{
 
 .preco{
     position: absolute;
-    top: 181px;
+    top: 179px;
     left: 970px;
     border: solid 5px rgba(128, 128, 128, 0.441);
     border-radius: 4px;

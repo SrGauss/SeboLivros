@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./imagensDoSite/LogoTrain.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="BBBookStyle.css">
+    <link rel="stylesheet" href="BookStyle.css">
 
     <title>Livro</title>
 
@@ -36,7 +36,6 @@
 
 
 <?php
-        session_start();
 
         $hostname = "127.0.0.1";
         $user = "root";
@@ -59,7 +58,9 @@
 
                 echo "<div class='card'>
 
+                    <div id='imgContainer'>
                         <img class='image' src='{$row['imagem']}'>
+                    </div>
                         <strong><p class='title'>".utf8_encode($row['nomeLivro'])."</p></strong>
 
                         <div class='info'>
@@ -96,6 +97,26 @@
 
 
 <script>
+    const container = document.getElementById("imgContainer");
+    const img = document.querySelector(".image");
+
+    container.addEventListener("mousemove", (e) => {
+        const x = e.clientX - e.target.offsetLeft;
+        const y = e.clientY - e.target.offsetTop;
+
+        console.log(x,y);
+
+        img.style.transformOrigin = `${x}px ${y}px`;
+        img.style.transform = "scale(2)"
+    })
+
+    container.addEventListener("mouseleave", () => {
+        img.style.transformOrigin = "center";
+        img.style.transform = "scale(1)";
+
+    })
+
+
     document.addEventListener('DOMContentLoaded', function() {
         const descri = document.querySelector('.descri');
         const btn = document.querySelector('.leia-mais-btn');
