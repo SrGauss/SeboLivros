@@ -9,23 +9,6 @@
 
     <title>Livro</title>
 
-    <style>
-  input[type=number]::-webkit-inner-spin-button,
-  input[type=number]::-webkit-outer-spin-button 
-  {
-    opacity: 1;
-  }
-
-  input[type=number]::-webkit-outer-spin-button, 
-  input[type=number]::-webkit-inner-spin-button 
-  {
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
-  }
-</style>
-
 </head>
 <body>
     
@@ -97,25 +80,6 @@
 
 
 <script>
-    const container = document.getElementById("imgContainer");
-    const img = document.querySelector(".image");
-
-    container.addEventListener("mousemove", (e) => {
-        const x = e.clientX - e.target.offsetLeft;
-        const y = e.clientY - e.target.offsetTop;
-
-        console.log(x,y);
-
-        img.style.transformOrigin = `${x}px ${y}px`;
-        img.style.transform = "scale(2)"
-    })
-
-    container.addEventListener("mouseleave", () => {
-        img.style.transformOrigin = "center";
-        img.style.transform = "scale(1)";
-
-    })
-
 
     document.addEventListener('DOMContentLoaded', function() {
         const descri = document.querySelector('.descri');
