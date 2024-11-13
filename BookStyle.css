@@ -194,10 +194,6 @@ input[type="text"]{
     color: white;
 }
 
-#imgContainer{
-
-}
-
 .image{
     position: relative;
     transform-origin: center;
@@ -206,9 +202,9 @@ input[type="text"]{
     width: auto;
     top: 180px;
     left: 30px;
-    border: solid 1px rgba(0, 0, 0, 0.424);
     overflow: hidden;
     z-index: 5;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.524);
 }
 
 .title{
@@ -342,3 +338,21 @@ input[type="text"]{
     left: 1060px;
 }
 
+.Star{
+    font-size: 36px;
+    color: black;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 915px;
+    top: 23px;
+    z-index: 5;
+}
+
+#biS{
+    font-size: 29px;
+    color: black;
+    position: absolute;
+    left: 920px;
+    top: 26px;
+}

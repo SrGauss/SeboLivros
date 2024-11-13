@@ -38,6 +38,25 @@
         top: 23px;
         z-index: 5;
     }
+
+    .Star{
+        font-size: 36px;
+        color: black;
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        left: 915px;
+        top: 23px;
+        z-index: 5;
+    }
+
+    #biS{
+        font-size: 29px;
+        color: black;
+        position: absolute;
+        left: 920px;
+        top: 26px;
+    }
     
     #bi{
         font-size: 36px;

@@ -28,6 +28,9 @@
 
     ?>
 
+    <a class="Star" href="Favorito.php"></a>
+        <span id="biS" class="bi bi-star"></span>
+
     <a class="Kart" href="Carrinho.php"></a>
         <span id="bi" class="bi bi-cart"></span>
             <p class="QuantiCompras" id="quantiCompras"><?php echo mysqli_num_rows($all_cart); ?></p>

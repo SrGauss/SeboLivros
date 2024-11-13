@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="LogoTrain.png" type="image/x-icon">
-    <link rel="stylesheet" href="STyleConta.css">
+    <link rel="shortcut icon" href="./imagensDoSite/LogoTrain.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="StyleConta.css">
     <title>Conta</title>
     <style>
         /* Estilo para as tabs */
@@ -37,12 +39,53 @@
             border: 1px solid #ccc;
             border-top: none;
         }
+        
     </style>
 </head>
 <body>
+
+<!-- Barra de cima -->
+
+<div class="UpBar">
+
+    <?php
+
+    session_start();
+
+    ?>
+
+    <?php
+
+        require_once 'connection.php';
+
+        $sql_cart = "SELECT * FROM `carrinho`;";
+        $all_cart = $conexao->query($sql_cart);
+
+    ?>
+
+    <a class="Star" href="Favorito.php"></a>
+        <span id="biS" class="bi bi-star"></span>
+
+    <a class="Kart" href="Carrinho.php"></a>
+        <span id="bi" class="bi bi-cart"></span>
+            <p class="QuantiCompras" id="quantiCompras"><?php echo mysqli_num_rows($all_cart); ?></p>
+
+    <span class="linha"></span>
+
+    <form class="search" action="pesquisa.php" method="post">
+        <input name="buscar" type="text" id="buscar" autocomplete="off" placeholder="O que você está procurando?">
+        <button type="submit"><i class="bi bi-search"></i></button>
+    </form>
+
+    <img class="tremImg" src="./imagensDoSite/Trem.png" alt="">
+
+</div>
+
+
+
+
     <div class="LeftBar">
         <?php
-        session_start();
 
         if (empty($_SESSION['nome'])) {
             header("Location: index.php", true, 301);
@@ -55,7 +98,7 @@
             echo "<p class='UserNAME'>" . $Nome . "</p>";
         }
         ?>
-        <a href="javascript:history.back()"><button class="back"><p>←</p></button></a>
+        <a href="index.php"><button class="back"><p>←</p></button></a>
         <a href="sair.php" class="Exit"><button>Sair da conta</button></a>
     </div>
 
@@ -70,7 +113,15 @@
         <div id="tabContents"></div>
     </main>
 
-    <script>
+    <hr class="LINE" width="100%" size="5px" color="gray"></hr>
+
+<script>
+    function confirmSubmit(event) {
+        return confirm('Você tem certeza de que deseja excluir este item?');
+    }
+</script>
+
+<script>
         function openTab(evt, tabName) {
             const tabcontent = document.getElementsByClassName("tabcontent");
             for (let i = 0; i < tabcontent.length; i++) {
@@ -133,6 +184,8 @@
 
         // Carregar as tabs ao carregar a página
         window.onload = loadTabs;
-    </script>
+</script>
+
+
 </body>
 </html>

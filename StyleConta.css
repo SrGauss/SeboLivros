@@ -1,11 +1,232 @@
+
+html{
+    scroll-behavior: smooth;
+}
+
+.UpBar{
+    position: absolute;
+    background-color: #F99417;
+    top: -5px;
+    left: -0.5px;
+    width: 100%;
+    height: 5em;
+    border-bottom: solid 1px black;
+    z-index: 2;
+    user-select: none;
+    z-index: 6;
+    box-shadow: 2px 2px 3px rgba(128, 128, 128, 0.5);
+}
+
+.BottomBar{
+    position: absolute;
+    background-color: #363062;
+    top: 75px;
+    left: -0.5px;
+    width: 100%;
+    height: 3em;
+    z-index: 1;
+}
+
+.Kart{
+    font-size: 36px;
+    color: black;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 1242px;
+    top: 23px;
+    z-index: 5;
+}
+
+.Star{
+    font-size: 36px;
+    color: black;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 915px;
+    top: 23px;
+    z-index: 5;
+}
+
+#biS{
+    font-size: 29px;
+    color: black;
+    position: absolute;
+    left: 1150px;
+    top: 26px;
+}
+
+#bi{
+    font-size: 36px;
+    color: black;
+    position: absolute;
+    left: 1245px;
+    top: 21px;
+}
+
+.QuantiCompras {
+    position: absolute;
+    font-size: 24px;
+    top: -9px;
+    left: 1260px;
+    font-family: Arial, Helvetica, 'sans-serif';
+    text-overflow: ellipsis;
+    max-width: 150px;
+    width: 2.1%;
+    text-align: center;
+    border-radius: 24px;
+    background-color: white;
+}
+
+.User{
+    font-size: 40px;
+    color: black;
+    position: relative;
+    left: 1000px;
+    top: 20px;
+    right: 0px;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.User p{
+    position: absolute;
+    font-size: 24px;
+    top: -22px;
+    left: 50px;
+    font-family: Arial, Helvetica, 'sans-serif';
+    text-overflow: ellipsis;
+    max-width: 150px; 
+    word-break: break-word;
+}
+
+.User2{
+    font-size: 40px;
+    color: black;
+    position: absolute;
+    left: 1000px;
+    top: 20px;
+    align-items: center;
+    white-space: wrap; 
+    text-decoration: none;
+    margin: 0px;
+}
+
+.User2 p{
+    position: relative;
+    font-size: clamp(16px, 2.5vw, 24px);
+    top: 9px;
+    left: 50px;
+    font-family: Arial, Helvetica, 'sans-serif';
+    max-width: 170px;
+    margin: 0px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-decoration: none;
+}
+
+.p2{
+    position: absolute;
+    font-size: 15px;
+    top: 18px;
+    left: 51px;
+    font-family: Arial, Helvetica, 'sans-serif';
+    text-overflow: ellipsis;
+    max-width: 150px; 
+    word-break: break-word;
+}
+
+.search{
+    position: absolute;
+    left: 620px;
+    top: 30px;
+}
+
+input[type="text"]{
+    width: 350px;
+    height: 50px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    transition: 0.5s;
+    position: absolute;
+    top: -15px;
+    left: -150px;
+    z-index: 4;
+}
+
+.search button {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    color: black;
+    margin: 7px 0;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: -22px;
+    left: 200px;
+    z-index: 3;
+}
+
+.search button i{
+    font-size: 22px;
+    position: relative;
+}
+
+.userBorder{
+    border: solid 2px white;
+    border-radius: 45px;
+    background-color: white;
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    top: -3px;
+    left: -5px;
+}
+
+.tremImg{
+    position: absolute;
+    width: 170px;
+    height: auto;
+    top: -5px;
+    left: 20px;
+}
+
+.linha{
+    position: absolute;
+    width: 0px;
+    height: 43px;
+    border: solid 1px rgb(15, 15, 15);
+    top: 20px;
+    left: 1220px;
+}
+
+.cBook{
+    position: absolute;
+    font-family: Arial, Helvetica, 'sans-serif';
+    font-size: 19.5px;
+    left: 1050px;
+    top: 14px;
+    text-decoration: none;
+    letter-spacing: 0.8px;
+    color: white;
+}
+
+
+
+/*CONTA */
+
 .LeftBar{
     position: absolute;
-    background-color:#F99417;
-    top: -7px;
+    background-color:#DBD3D3;
+    top: 75px;
     left: -8px;
     width: 21.5em;
-    height: 41.5em;
-    z-index: 2;
+    height: 39.5em;
+    z-index: 1;
     user-select: none;
 }
 
@@ -16,7 +237,7 @@
     position: absolute;
     width: 175px;
     height: 175px;
-    top: 88px;
+    top: 48px;
     left: 84px;
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.305);
 }
@@ -27,7 +248,7 @@
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     letter-spacing: 1px;
     color: white;
-    top: 250px;
+    top: 220px;
     left: 85px;
     max-width: 200px;
     align-items: center;
@@ -43,7 +264,7 @@
     position: absolute;
     width: 65px;
     height: 65px;
-    top: 75px;
+    top: 25px;
     left: 65px;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.305);
     transition: all ease 0.5s;
@@ -59,7 +280,7 @@
 
 .Exit{
     position: absolute;
-    top: 605px;
+    top: 585px;
     left: 100px;
 }
 
@@ -91,10 +312,14 @@ main{
     flex-direction: column;
     position: relative;
     left: 150px;
-    top: -10px;
+    top: 30px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
+main h1{
+    position: relative;
+    top: 30px;
+}
 
 main .card{
     height:  140px;
@@ -125,7 +350,7 @@ main .card .caption{
 }
 
 main .card .caption p{
-    font-size: 1.7rem;
+    font-size: 1.3rem;
 }
 
 del{
@@ -147,7 +372,7 @@ main .card .caption .rate i{
 
 main .card .caption .preco{
     position: absolute;
-    top: 12%;
+    top: 30%;
     right: -1%;
 }
 
@@ -162,7 +387,7 @@ main .card .caption .view{
     font-weight: bold;
     width: 30%;
     position: relative;
-    top: -50px;
+    top: -30px;
 }
 
 main .card .caption .remove{
@@ -176,24 +401,34 @@ main .card .caption .remove{
     font-weight: bold;
     width: 30%;
     position: relative;
-    top: -91px;
+    top: -72px;
     left: 145px;
 }
 
 main .card .Bookname{
-position: relative;
-top: 60%;
+    position: relative;
+    top: 60%;
 }
 
 main .card .BookGender{
     position: relative;
-    top: 36%;
-    left: 37%;
+    top: 41%;
+    left: 45%;
     font-size: 1rem;
+    max-width: 1500px;
 }
 
 main .card .Author{
     position: relative;
-    top: -1%;
+    top: 5%;
     font-size: 1rem;
+    max-width: 300px;
+    position: relative;
+}
+
+.LINE{
+    position: absolute;
+    left: -2px;
+    top: 699px;
+    z-index: 3;
 }
