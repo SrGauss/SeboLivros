@@ -65,6 +65,7 @@
 
     <a class="Star" href="Favorito.php"></a>
         <span id="biS" class="bi bi-star"></span>
+            <p class="QuantiFavori" id="quantiFav">0</p>
 
     <a class="Kart" href="Carrinho.php"></a>
         <span id="bi" class="bi bi-cart"></span>
@@ -98,8 +99,15 @@
             echo "<p class='UserNAME'>" . $Nome . "</p>";
         }
         ?>
+        <a href="editPerfil.php"><button class="editarP">🖊 Editar Perfil</button></a>
+
+        <a href="trocarSenha.php"><button class="passW">🗝 Trocar Senha</button></a>
+
+        <a href="privaciddae.php"><button class="priva">Configurações de Privacidade</button></a>
+
+
         <a href="index.php"><button class="back"><p>←</p></button></a>
-        <a href="sair.php" class="Exit"><button>Sair da conta</button></a>
+        <a href="sair.php" class="Exit"><button>↩ Sair da conta</button></a>
     </div>
 
     <main>

@@ -29,7 +29,7 @@ while ($row = mysqli_fetch_assoc($resultado)) {
             <h3 class='BookGender'>|&emsp;<?php echo utf8_encode($row["genero"]); ?></h3>
             <h3 class='Author'><?php echo utf8_encode($row["autor"]); ?></h3>
             <p class='preco'><b><?php echo $row["preco"]; ?></b></p>
-            <p class='disconto'><b><del><?php echo $row["desconto"]; ?></del></b></p>
+            <p class='disconto'><b><?php echo $row["desconto"]; ?></b></p>
 
             <form action="Visualizar.php" method="POST">
                 <input type="hidden" id="View" name="View" value="<?php echo $row["id"]; ?>">

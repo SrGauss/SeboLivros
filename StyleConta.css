@@ -44,13 +44,27 @@ html{
     position: absolute;
     width: 40px;
     height: 40px;
-    left: 915px;
+    left: 1147px;
     top: 23px;
     z-index: 5;
 }
 
+.QuantiFavori {
+    position: absolute;
+    font-size: 24px;
+    top: -9px;
+    left: 1167px;
+    font-family: Arial, Helvetica, 'sans-serif';
+    text-overflow: ellipsis;
+    max-width: 150px;
+    width: 2.1%;
+    text-align: center;
+    border-radius: 24px;
+    background-color: white;
+}
+
 #biS{
-    font-size: 29px;
+    font-size: 34px;
     color: black;
     position: absolute;
     left: 1150px;
@@ -217,11 +231,13 @@ input[type="text"]{
 
 
 
+
+
 /*CONTA */
 
 .LeftBar{
     position: absolute;
-    background-color:#DBD3D3;
+    background-color: lightgrey;
     top: 75px;
     left: -8px;
     width: 21.5em;
@@ -247,7 +263,7 @@ input[type="text"]{
     font-size: clamp(16px, 2.5vw, 27px);
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     letter-spacing: 1px;
-    color: white;
+    color: rgb(67, 67, 67);
     top: 220px;
     left: 85px;
     max-width: 200px;
@@ -277,31 +293,6 @@ input[type="text"]{
     top: -42px;
     left: 0px;
 }
-
-.Exit{
-    position: absolute;
-    top: 585px;
-    left: 100px;
-}
-
-.Exit button{
-    position: relative;
-    width: 160px;
-    height: 30px;
-    background-color: rgb(219, 77, 77);
-    color: white;
-    font-size: 18px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    letter-spacing: 1.5px;
-    border: solid 1px white;
-    transition: all ease 0.5s;
-}
-
-.Exit button:hover{
-    background-color: rgb(184, 64, 64);
-    cursor: pointer;
-}
-
 
 main{
     max-width: 1200px;
@@ -353,11 +344,10 @@ main .card .caption p{
     font-size: 1.3rem;
 }
 
-del{
+.disconto{
     position: absolute;
     top: 55%;
     right: -1%;
-    text-decoration: line-through;
     color: rgb(212, 87, 87);
 }
 
@@ -387,7 +377,7 @@ main .card .caption .view{
     font-weight: bold;
     width: 30%;
     position: relative;
-    top: -30px;
+    top: -10px;
 }
 
 main .card .caption .remove{
@@ -401,18 +391,18 @@ main .card .caption .remove{
     font-weight: bold;
     width: 30%;
     position: relative;
-    top: -72px;
+    top: -51px;
     left: 145px;
 }
 
 main .card .Bookname{
     position: relative;
-    top: 60%;
+    top: 55px;
 }
 
 main .card .BookGender{
     position: relative;
-    top: 41%;
+    top: 34px;
     left: 45%;
     font-size: 1rem;
     max-width: 1500px;
@@ -420,7 +410,7 @@ main .card .BookGender{
 
 main .card .Author{
     position: relative;
-    top: 5%;
+    top: -15px;
     font-size: 1rem;
     max-width: 300px;
     position: relative;
@@ -431,4 +421,72 @@ main .card .Author{
     left: -2px;
     top: 699px;
     z-index: 3;
+}
+
+.editarP{
+    position: absolute;
+    width: 160px;
+    height: 30px;
+    background-color: transparent;
+    color: rgb(119, 119, 119);
+    font-size: 17px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 1.3px;
+    border: none;
+    transition: all ease 0.5s;
+    top: 330px;
+    left: 83px;
+    cursor: pointer;
+}
+
+.passW{
+    position: absolute;
+    width: 160px;
+    height: 30px;
+    background-color: transparent;
+    color: rgb(119, 119, 119);
+    font-size: 17px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 1.3px;
+    border: none;
+    transition: all ease 0.5s;
+    top: 375px;
+    left: 87px;
+    cursor: pointer;
+}
+
+.priva{
+    position: absolute;
+    width: 160px;
+    height: 30px;
+    background-color: transparent;
+    color: rgb(119, 119, 119);
+    font-size: 17px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 1.3px;
+    border: none;
+    transition: all ease 0.5s;
+    top: 420px;
+    left: 93px;
+    cursor: pointer;
+}
+
+.Exit{
+    position: absolute;
+    top: 540px;
+    left: 95px;
+}
+
+.Exit button{
+    position: relative;
+    width: 160px;
+    height: 30px;
+    background-color: transparent;
+    color: rgb(119, 119, 119);
+    font-size: 17px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 1.5px;
+    border: none;
+    cursor: pointer;
+
 }
