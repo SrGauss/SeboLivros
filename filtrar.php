@@ -13,9 +13,9 @@ if ($conexao->connect_errno) {
 
 if (isset($_GET['genero']) && !empty($_GET['genero'])) {
     $genero = utf8_decode($conexao->real_escape_string($_GET['genero']));
-    $sql = "SELECT `id`, `nomeLivro`, `preco`, `genero`, `imagem`,`estoque` FROM `livro` WHERE `genero` = '$genero' ORDER BY RAND();";
+    $sql = "SELECT `id`, `nomeLivro`, `preco`, `desconto`, `genero`, `imagem`,`estoque` FROM `livro` WHERE `genero` = '$genero' ORDER BY RAND();";
 } else {
-    $sql = "SELECT `id`, `nomeLivro`, `preco`, `genero`, `imagem`,`estoque` FROM `livro` ORDER BY RAND();";
+    $sql = "SELECT `id`, `nomeLivro`, `preco`, `desconto`, `genero`, `imagem`,`estoque` FROM `livro` ORDER BY RAND();";
 }
 
 $dado = $conexao->query($sql);
@@ -24,12 +24,18 @@ echo "<div class='cards-container'>";
 
 while ($row = mysqli_fetch_array($dado)) {
 
+    $originalPrice = $row['preco'];
+    $des = $row['desconto'];
+
+        $valorDesconto = ($originalPrice * $des) / 100;
+        $precoFinal = $originalPrice - $valorDesconto;
+
     echo "
     <form method='POST' action='Book.php' id='autoSubmitForm{$row['id']}'>
         <div class='card' onclick='document.getElementById(\"autoSubmitForm{$row['id']}\").submit();'>
             <img class='image' src='{$row['imagem']}'>
             <span class='title'>".utf8_encode($row['nomeLivro'])."</span>
-            <span class='price'>R$ {$row['preco']}</span>
+            <span class='price'>R$ {$precoFinal}</span>
             <input type='hidden' id='View' name='View' value='{$row[0]}'>";
             
         if ($row['estoque'] > 0) {
